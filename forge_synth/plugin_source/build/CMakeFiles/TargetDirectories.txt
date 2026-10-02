@@ -1,0 +1,11 @@
+/home/North3rnLight3r/Projects/FORGE_Synth/forge_synth/plugin_source/build/CMakeFiles/ForgeSynth.dir
+/home/North3rnLight3r/Projects/FORGE_Synth/forge_synth/plugin_source/build/CMakeFiles/ForgeSynth_All.dir
+/home/North3rnLight3r/Projects/FORGE_Synth/forge_synth/plugin_source/build/CMakeFiles/ForgeSynth_Standalone.dir
+/home/North3rnLight3r/Projects/FORGE_Synth/forge_synth/plugin_source/build/CMakeFiles/ForgeSynth_VST3.dir
+/home/North3rnLight3r/Projects/FORGE_Synth/forge_synth/plugin_source/build/CMakeFiles/juce_vst3_helper.dir
+/home/North3rnLight3r/Projects/FORGE_Synth/forge_synth/plugin_source/build/CMakeFiles/edit_cache.dir
+/home/North3rnLight3r/Projects/FORGE_Synth/forge_synth/plugin_source/build/CMakeFiles/rebuild_cache.dir
+/home/North3rnLight3r/Projects/FORGE_Synth/forge_synth/plugin_source/build/CMakeFiles/list_install_components.dir
+/home/North3rnLight3r/Projects/FORGE_Synth/forge_synth/plugin_source/build/CMakeFiles/install.dir
+/home/North3rnLight3r/Projects/FORGE_Synth/forge_synth/plugin_source/build/CMakeFiles/install/local.dir
+/home/North3rnLight3r/Projects/FORGE_Synth/forge_synth/plugin_source/build/CMakeFiles/install/strip.dir

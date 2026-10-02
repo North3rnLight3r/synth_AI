@@ -1,0 +1,25 @@
+# ninja log v7
+3	38	1790981259048047428	/home/North3rnLight3r/Projects/FORGE_Synth/forge_synth/plugin_source/build/CMakeFiles/cmake.verify_globs	e2125e1be17e325a
+44	156	1790981086622468467	CMakeFiles/ForgeSynth.dir/usr/share/juce/modules/juce_audio_processors/juce_audio_processors_lv2_libs.cpp.o	6caa0ea73f0e84e8
+42	156	1790981086621388953	CMakeFiles/ForgeSynth.dir/usr/share/juce/modules/juce_audio_processors/juce_audio_processors_ara.cpp.o	d36a383378c9b097
+156	15228	1790981086735864461	CMakeFiles/ForgeSynth.dir/usr/share/juce/modules/juce_data_structures/juce_data_structures.cpp.o	82154c6e0a0ee9af
+54	18602	1790981086632468774	CMakeFiles/ForgeSynth.dir/usr/share/juce/modules/juce_events/juce_events.cpp.o	fcc78aa6ee1a07fe
+41	22411	1790981086619468375	CMakeFiles/juce_vst3_helper.dir/usr/share/juce/modules/juce_audio_plugin_client/VST3/juce_VST3ManifestHelper.cpp.o	825c85a9e99372cc
+42	41138	1790981086621137514	CMakeFiles/ForgeSynth.dir/usr/share/juce/modules/juce_audio_processors/juce_audio_processors.cpp.o	f9805b5449dee6f5
+51	62805	1790981086629468682	CMakeFiles/ForgeSynth.dir/usr/share/juce/modules/juce_graphics/juce_graphics.cpp.o	713cb44c90b7d529
+156	79449	1790981086735265895	CMakeFiles/ForgeSynth.dir/usr/share/juce/modules/juce_core/juce_core.cpp.o	46a84b0d2b04dba2
+48	336	1790981259094201297	juce_vst3_helper	f25ddfda97621c11
+43	23661	1790981259089821954	CMakeFiles/ForgeSynth.dir/usr/share/juce/modules/juce_audio_formats/juce_audio_formats.cpp.o	24ed2ab632c0cb5c
+43	23819	1790981259089023570	CMakeFiles/ForgeSynth.dir/usr/share/juce/modules/juce_audio_utils/juce_audio_utils.cpp.o	5887e984a44a61c3
+44	25405	1790981259090287532	CMakeFiles/ForgeSynth.dir/usr/share/juce/modules/juce_audio_devices/juce_audio_devices.cpp.o	97bae7b2220886c1
+42	35999	1790981259088718353	CMakeFiles/ForgeSynth.dir/usr/share/juce/modules/juce_audio_basics/juce_audio_basics.cpp.o	9463cfcefcd1f85
+45	52159	1790981259091589210	CMakeFiles/ForgeSynth.dir/usr/share/juce/modules/juce_opengl/juce_opengl.cpp.o	c6a436a6cd5de2f0
+42	118641	1790981259088503164	CMakeFiles/ForgeSynth.dir/usr/share/juce/modules/juce_gui_basics/juce_gui_basics.cpp.o	cc01eea41d0b9fb7
+2	37	1790981450560804162	/home/North3rnLight3r/Projects/FORGE_Synth/forge_synth/plugin_source/build/CMakeFiles/cmake.verify_globs	e2125e1be17e325a
+49	82	1790981450607633135	CMakeFiles/ForgeSynth_Standalone.dir/usr/share/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_ARA.cpp.o	3695680daf87d764
+50	87	1790981450607804949	CMakeFiles/ForgeSynth_Standalone.dir/usr/share/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_LV2.cpp.o	c8a99261cb2e5e1c
+48	87	1790981450606897685	CMakeFiles/ForgeSynth_Standalone.dir/usr/share/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX.cpp.o	7e399545887882a
+49	88	1790981450607314440	CMakeFiles/ForgeSynth_Standalone.dir/usr/share/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX_utils.cpp.o	bf48aef4d4c4fc7e
+52	90	1790981450609804983	CMakeFiles/ForgeSynth_Standalone.dir/usr/share/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Unity.cpp.o	eb6678f5814297c8
+54	93	1790981450612390583	CMakeFiles/ForgeSynth_Standalone.dir/usr/share/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST2.cpp.o	83edad7b911afcbc
+51	8881	1790981450608804966	CMakeFiles/ForgeSynth_Standalone.dir/usr/share/juce/modules/juce_audio_plugin_client/juce_audio_plugin_client_Standalone.cpp.o	d030e8dcf2033106
