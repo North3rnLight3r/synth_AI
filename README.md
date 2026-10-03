@@ -1,68 +1,42 @@
 # FORGE Synth
 
-FORGE Synth is a **neural‑driven wavetable synthesizer** written in C++ with JUCE and Python.  The project is split into two main parts:
+FORGE Synth is a polyphonic, MIDI-playable virtual instrument built with JUCE. Its local wavetable engine is self-contained; the optional Python API generates the same wavetable format and can use a compatible ONNX decoder. There is no bundled trained model, cloud service, telemetry, or network access in the plugin.
 
-1.  The **C++ core** – an AudioProcessor that accepts MIDI, reads a latent vector, runs a neural network (ONNX) or a deterministic fallback, and outputs a wavetable‑oscillated stream.
-2.  The **Python API** – a tiny FastAPI server that can expose the model and an AI toolchain for generating wave tables on demand.
+## Playable features
 
-## Features
+- 16 pitch-bendable stereo voices with nine-level harmonic-limited wavetable oscillators, sub oscillator, noise, stereo width, velocity-sensitive ADSR, and a resonant low-pass filter with bipolar envelope modulation.
+- A draggable, audible four-shape timbre pad, plus drive, tempo-synced delay, stereo room, output meter, and safety ceiling.
+- Ten factory patches for bass, keys, plucks, leads, pads, rhythms, and textures; timbre randomisation that preserves the rhythm, envelope, and effects.
+- Host-restorable state and portable `.forgepreset` patches, including imported table cycles.
+- Import and pitch-safe playback of a 2,048-frame mono or stereo WAV/AIFF single cycle; the local backend's WAV response is ready to import.
+- A 16-step rhythm gate that follows DAW play position and tempo, with internal tempo fallback, step divisions, and adjustable swing.
+- On-screen MIDI keyboard, resizable interface, resettable/typed knobs, contextual tooltips, and an immediate panic button.
 
-| Feature | Status |
-|---------|--------|
-| VST3 / AU / Standalone | Buildable (once JUCE is present)
-| MIDI Poly‑voice | ✅ A simple wavetable oscillator
-| Latent‑space UI | ✅ Two sliders (X/Y)
-| ADSR envelope | ✅ In‑voice
-| Filter | ✅ Low‑pass Q
-| Master gain | ✅ Linear
-| Python inference engine | **Skeleton** – ready to plug a Torch model
-| ONNX export script | ✅ `model_exporter.py`
+## Build
 
-## Build Flow
+The verified build uses macOS arm64, Apple Clang, CMake 4.4, Ninja, and JUCE 8.0.15. CMake fetches JUCE on the first build and reuses the pinned source afterwards.
 
 ```bash
-# From the root of the repository
-cd forge_synth/plugin_source
-mkdir -p build && cd build
-cmake .. -GNinja -DJUCE_ROOT=../juce-8.0.0   # point JUCE into the repo
-ninja                                         # produces Standalone, VST3, AU
+cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
+cmake --build build --parallel 6
+ctest --test-dir build --output-on-failure
 ```
 
-> **Note** – JUCE must be located inside the project tree (`/home/.../Projects/FORGE_Synth/juce-8.0.0`).  The build script queries `JUCE_ROOT` provided above.
+The plugin output is `build/forge_synth/plugin_source/ForgeSynth_artefacts/Release/VST3/FORGE Synth.vst3`; standalone is beside it under `Standalone/FORGE Synth.app`; AU (macOS only) is under `AU/FORGE Synth.component`. Rescan VST3 in your DAW after copying it to your system VST3 folder. Launch standalone with `open 'build/forge_synth/plugin_source/ForgeSynth_artefacts/Release/Standalone/FORGE Synth.app'`.
 
-## Running the Plugin
+The build emits VST3 and standalone on macOS, Windows, and Linux, and adds AU on macOS. To use a local JUCE source tree, add `-DJUCE_ROOT=/absolute/path/to/JUCE` to the configure command. JUCE's platform dependencies apply. Debian-based Linux may need `libasound2-dev libfreetype6-dev libfontconfig1-dev libx11-dev libxinerama-dev libxrandr-dev libxcursor-dev`; Windows requires the Visual Studio C++ toolchain and Windows SDK.
 
-After build, launch the stand‑alone executable:
+## Optional backend
 
-```bash
-./ForgeSynth_Standalone
-```
+The local C++ synth has no backend requirement. For offline wavetable generation, see [backend installation, routing, ONNX contract, and environment settings](forge_synth/docs/ai_api.md). By default, the Python service uses the same deterministic timbre map. ONNX mode requires a user-supplied trained model; the included exporter makes a plumbing reference, not a trained sound model. The service exports a one-cycle WAV that the plugin imports.
 
-Inside the GUI you can tweak:
+## Guides
 
-* **Latent X/Y** – moves the latent vector in 2‑D space
-* **ADSR** – Attack / Decay / Sustain / Release
-* **Filter** – Cut‑off & Resonance
-* **Master Gain** – overall output level
+- [Architecture, realtime data flow, parameters, and state](docs/architecture.md)
+- [Build, install, and play guide](forge_synth/docs/usage.md)
+- [Backend API, routing, environment setup, and model contract](forge_synth/docs/ai_api.md)
+- [Backend JSON configuration schema](docs/ai_config_schema.md)
+- [JUCE and VST format configuration](forge_synth/plugin_source/CMakeLists.txt)
+- [Regression tests](tests/)
 
-For DAW usage, drop `ForgeSynth.vst3` into your DAW’s plugin folder.  The plugin will respond to MIDI Note On/Off.
-
-## AI Export / Routing
-
-The small Python script `ai_engine/model_exporter.py` shows how you could export a Pytorch model to ONNX:
-
-```bash
-python ai_engine/model_exporter.py
-```
-
-The following folder contains a sample config file (`config/ai_config.json`) and environment variables (`config/ai.env`).
-
-## Documentation
-
-* `docs/architecture.md` – high‑level architecture
-* `docs/usage.md` – build & run instructions
-* `docs/ai_api.md` – FastAPI endpoint description
-* `docs/ai_config_schema.md` – JSON schema for the config file
-
-Happy hacking! 🚀
-# synth_AI
+This is an actively developed instrument, not a claim of plug-in certification or a signed installer. Verify the plug-in in your target DAW before a production session.

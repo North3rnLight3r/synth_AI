@@ -1,0 +1,6 @@
+{
+  "backend": "deterministic",
+  "model_path": "../forge_synth/models/forge_reference.onnx",
+  "device": "cpu",
+  "threads": 1
+}
