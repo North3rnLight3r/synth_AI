@@ -1,4 +1,4 @@
-<img width="160" height="160" alt="ForgeIcon-v2 5-1024 icon" src="https://github.com/user-attachments/assets/dce3d4b8-bec1-4df6-b53c-992aaad3a73e" />
+<img width="60" height="60" alt="ForgeIcon-v2 5-1024 icon" src="https://github.com/user-attachments/assets/dce3d4b8-bec1-4df6-b53c-992aaad3a73e" />
 # FORGE Synth
 
 FORGE Synth is a polyphonic, MIDI-playable virtual instrument built with JUCE. Its local wavetable engine is self-contained; the optional Python API generates the same wavetable format and can use a compatible ONNX decoder. There is no bundled trained model, cloud service, telemetry, or network access in the plugin.
