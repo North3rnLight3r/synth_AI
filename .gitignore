@@ -10,3 +10,5 @@ config/*.local.*
 *.wav
 *.forgepreset
 !tests/fixtures/*.forgepreset
+.forge/metadata.sqlite
+.forge/metadata.sqlite.backup
